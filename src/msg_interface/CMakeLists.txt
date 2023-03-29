@@ -26,7 +26,12 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/AddTwoInts.srv"
   "msg/SpeechRecognitionCandidates.msg"
   "msg/SetParametersResult.msg"
+<<<<<<< Updated upstream
   "srv/SpeechRec.srv"
+=======
+  "srv/Get_speech_rec_msg"
+  "srv/Speech_msg_ready"
+>>>>>>> Stashed changes
 )
 
 #install(FILES mapping_rules.yaml DESTINATION share/${PROJECT_NAME})

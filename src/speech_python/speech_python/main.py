@@ -4,7 +4,10 @@ import rclpy
 
 from threading import Thread, Event
 from queue import Queue
+<<<<<<< Updated upstream
 from enum import Enum
+=======
+>>>>>>> Stashed changes
 
 from speech_python.speech_rec_service import Publish 
 from speech_python.speech_rec_client_async import Rec 
@@ -12,7 +15,10 @@ from speech_python.speech_rec_client_async import Rec
 
 from msg_interface.msg import SpeechRecognitionCandidates
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 def main(args=None):
 
     logging.basicConfig(level=logging.DEBUG)

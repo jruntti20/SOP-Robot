@@ -1,5 +1,6 @@
 import rclpy
 from rclpy.node import Node
+<<<<<<< Updated upstream
 
 import speech_recognition as sr
 
@@ -43,3 +44,49 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+=======
+from rclpy.task import Future
+
+import speech_recognition as sr
+from threading import Thread, Event
+from queue import Queue
+
+from msg_interface.msg import SpeechRecognitionCandidates, SetParametersResult
+from msg_interface.srv import Get_speech_msg, Speech_msg_ready
+
+class MinimalClientAsync(Node):
+
+    def __init__(self):
+        super().__init__('minimal_client_async')
+        self.cli_speech_msg_ready = self.create_client(Speech_msg_ready, 'speech_msg_ready')
+        self.cli_speech_msg = self.create_client(Speech_msg, 'speech_msg_ready')
+
+        while not self.cli_speech_msg_ready.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('service not available, waiting again...')
+        self.req_speech_msg_ready = Speech_msg_ready.Request()
+        self.req_speech_msg = Speech_msg.Request()
+
+    def send_request(self, msg):
+        self.future = self.cli.call_async(self.req)
+
+class Publish(Thread):
+    def __init__(self, name, quit_event):
+        Thread.__init__(self)
+        self.name = name
+        self.event = quit_event
+        self.future = Future()
+
+        self.logger().info("Speech recognizer has been started...")
+
+    def run(self, in_q):
+
+        self.publisher = MinimalPublisher(in_q)
+        
+        #rclpy.spin(self.publisher)
+        while not self.event.is_set():
+            #rclpy.spin_until_future_complete(self.publisher, self.future)
+            rclpy.spin_once(self.publisher)
+
+        self.publisher.destroy_node()
+        rclpy.shutdown()
+>>>>>>> Stashed changes
