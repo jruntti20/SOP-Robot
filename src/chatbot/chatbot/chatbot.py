@@ -44,42 +44,42 @@ chatbot = ChatBot("Helper",
 
 
 # train with self-written data
-""" trainer = ChatterBotCorpusTrainer(chatbot)
+trainer = ChatterBotCorpusTrainer(chatbot)
 
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/trainingdata"
+    "src\chatbot\chatbot\trainingdata"
     
-) """
+)
 
 
 # train with ambignq data
 """ trainer = ChatterBotJSONTrainer(chatbot)
 
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/ambignq/train.json", input_language="en"
+    "src\chatbot\chatbot\ambignq\train.json", input_language="en"
 ) """
 
 
 # train with qa dataset
 """ trainer = ChatterBotTXTTrainer(chatbot)
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/Question_Answer_Dataset_v1.2/S08/question_answer_pairs.txt", input_language="en"
+    "src\chatbot\chatbot\Question_Answer_Dataset_v1.2\S08\question_answer_pairs.txt", input_language="en"
 )
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/Question_Answer_Dataset_v1.2/S09/question_answer_pairs.txt", input_language="en"
+    "src\chatbot\chatbot\Question_Answer_Dataset_v1.2\S09\question_answer_pairs.txt", input_language="en"
 )
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/Question_Answer_Dataset_v1.2/S10/question_answer_pairs.txt", input_language="en"
+    "src\chatbot\chatbot\Question_Answer_Dataset_v1.2\S10\question_answer_pairs.txt", input_language="en"
 ) """
 
 # train with stanford training data
 """ trainer = SQuADJSONTrainer(chatbot)
 trainer.train(
-    "C:/Users/veikko/Documents/test/SOP-Robot/src/chatbot/chatbot/train_stanford/train-v2.0.json", input_language="en"
+    "src\chatbot\chatbot\train_stanford\train-v2.0.json", input_language="en"
     ) """
 
 # train with msmarco data
-
+# not working
 """ trainer = MSMARCOJSONTrainer(chatbot)
 trainer.train(
     "SOP-Robot/src/chatbot/chatbot/train_msmarco/train_v2.1.json", input_language="en", chunk_size=500
