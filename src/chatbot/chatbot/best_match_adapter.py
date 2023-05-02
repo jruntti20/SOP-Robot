@@ -31,10 +31,15 @@ class BestMatchAdapter(LogicAdapter):
         # Search for the closest match to the input statement
         for result in search_results:
 
+            # Get highest confidence result
+            if result.confidence > closest_match.confidence:
+                closest_match = result
+                
             # Stop searching if a match that is close enough is found
-            if result.confidence >= 0.9:
+            if result.confidence >= 0.8:
                 closest_match = result
                 break
+
 
         self.chatbot.logger.info('Using "{}" as a close match to "{}" with a confidence of {}'.format(
             closest_match.text, input_statement.text, closest_match.confidence
