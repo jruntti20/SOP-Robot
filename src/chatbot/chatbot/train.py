@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from chatbot import chatbot
 from chatterbot.trainers import ListTrainer
 from chatterbot.trainers import ChatterBotCorpusTrainer

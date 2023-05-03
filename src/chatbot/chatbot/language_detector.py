@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from langdetect import detect
 
 class detect_language():

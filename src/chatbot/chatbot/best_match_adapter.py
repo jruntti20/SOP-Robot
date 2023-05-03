@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+
 from chatterbot.logic import LogicAdapter
 from chatterbot import filters
+import langdetect
 
 
 class BestMatchAdapter(LogicAdapter):
@@ -21,7 +24,7 @@ class BestMatchAdapter(LogicAdapter):
         super().__init__(chatbot, **kwargs)
 
         self.excluded_words = kwargs.get('excluded_words')
-
+    
     def process(self, input_statement, additional_response_selection_parameters=None):
         search_results = self.search_algorithm.search(input_statement)
 

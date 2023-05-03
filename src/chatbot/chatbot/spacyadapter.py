@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import spacy
 from chatterbot.logic import LogicAdapter
 from chatterbot import filters
