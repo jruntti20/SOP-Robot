@@ -1,0 +1,6 @@
+# The Chatbot client makes an empty request and asks SpeechRecognizerNode for recognized_speech.
+
+---
+bool success
+#std_msgs/String recognized_speech
+string recognized_speech

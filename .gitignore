@@ -12,7 +12,11 @@ build
 devel
 log
 install
+src/examples
+src/ros_tutorials
 
 .vagrant
 
 temp_dynamixel_for_launch.yaml
+src/speech_recognizer/speech_recognizer/mic_vad_streaming/deepspeech-0.9.3-models.pbmm
+src/speech_recognizer/speech_recognizer/mic_vad_streaming/deepspeech-0.9.3-models.scorer
